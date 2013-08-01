@@ -1,0 +1,1017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Domain.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DomainStoreContainer">
+          <EntitySet Name="Area" EntityType="Domain.Store.Area" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Category" EntityType="Domain.Store.Category" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Employee" EntityType="Domain.Store.Employee" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Menu" EntityType="Domain.Store.Menu" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="MenuProduct" EntityType="Domain.Store.MenuProduct" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="OTCSale" EntityType="Domain.Store.OTCSale" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Payment" EntityType="Domain.Store.Payment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Person" EntityType="Domain.Store.Person" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Product" EntityType="Domain.Store.Product" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Register" EntityType="Domain.Store.Register" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Restaurant" EntityType="Domain.Store.Restaurant" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Sale" EntityType="Domain.Store.Sale" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SaleLineItem" EntityType="Domain.Store.SaleLineItem" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Table" EntityType="Domain.Store.Table" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TableSale" EntityType="Domain.Store.TableSale" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UserAccount" EntityType="Domain.Store.UserAccount" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_Area_Restaurant" Association="Domain.Store.FK_Area_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurant" />
+            <End Role="Area" EntitySet="Area" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Person" Association="Domain.Store.FK_Employee_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Restaurant" Association="Domain.Store.FK_Menu_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurant" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemPrice_Menu" Association="Domain.Store.FK_MenuItemPrice_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="MenuProduct" EntitySet="MenuProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemPrice_Product1" Association="Domain.Store.FK_MenuItemPrice_Product1">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="MenuProduct" EntitySet="MenuProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OTCSale_Sale" Association="Domain.Store.FK_OTCSale_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="OTCSale" EntitySet="OTCSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Sale" Association="Domain.Store.FK_Payment_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Restaurant" Association="Domain.Store.FK_Person_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurant" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category" Association="Domain.Store.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Register_Area" Association="Domain.Store.FK_Register_Area">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Register" EntitySet="Register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Register" Association="Domain.Store.FK_Sale_Register">
+            <End Role="Register" EntitySet="Register" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_UserAccount" Association="Domain.Store.FK_Sale_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleLineItem_MenuItemPrice" Association="Domain.Store.FK_SaleLineItem_MenuItemPrice">
+            <End Role="MenuProduct" EntitySet="MenuProduct" />
+            <End Role="SaleLineItem" EntitySet="SaleLineItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleLineItem_Sale" Association="Domain.Store.FK_SaleLineItem_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="SaleLineItem" EntitySet="SaleLineItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_Area" Association="Domain.Store.FK_Table_Area">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TableSale_Sale" Association="Domain.Store.FK_TableSale_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="TableSale" EntitySet="TableSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_Employee" Association="Domain.Store.FK_UserAccount_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RestaurantId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RestaurantId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OTCSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SaleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RestaurantId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="18" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Register">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegisterId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SaleLineItem">
+          <Key>
+            <PropertyRef Name="SaleId" />
+            <PropertyRef Name="MenuProductId" />
+          </Key>
+          <Property Name="SaleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MenuProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TableNumber" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TableSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TableId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Area_Restaurant">
+          <End Role="Restaurant" Type="Domain.Store.Restaurant" Multiplicity="1" />
+          <End Role="Area" Type="Domain.Store.Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Person">
+          <End Role="Person" Type="Domain.Store.Person" Multiplicity="1" />
+          <End Role="Employee" Type="Domain.Store.Employee" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Restaurant">
+          <End Role="Restaurant" Type="Domain.Store.Restaurant" Multiplicity="1" />
+          <End Role="Menu" Type="Domain.Store.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemPrice_Menu">
+          <End Role="Menu" Type="Domain.Store.Menu" Multiplicity="1" />
+          <End Role="MenuProduct" Type="Domain.Store.MenuProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuProduct">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemPrice_Product1">
+          <End Role="Product" Type="Domain.Store.Product" Multiplicity="1" />
+          <End Role="MenuProduct" Type="Domain.Store.MenuProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OTCSale_Sale">
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="1" />
+          <End Role="OTCSale" Type="Domain.Store.OTCSale" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OTCSale">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Sale">
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="1" />
+          <End Role="Payment" Type="Domain.Store.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Restaurant">
+          <End Role="Restaurant" Type="Domain.Store.Restaurant" Multiplicity="1" />
+          <End Role="Person" Type="Domain.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="Domain.Store.Category" Multiplicity="1" />
+          <End Role="Product" Type="Domain.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Register_Area">
+          <End Role="Area" Type="Domain.Store.Area" Multiplicity="1" />
+          <End Role="Register" Type="Domain.Store.Register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Register">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_Register">
+          <End Role="Register" Type="Domain.Store.Register" Multiplicity="1" />
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="RegisterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_UserAccount">
+          <End Role="UserAccount" Type="Domain.Store.UserAccount" Multiplicity="1" />
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleLineItem_MenuItemPrice">
+          <End Role="MenuProduct" Type="Domain.Store.MenuProduct" Multiplicity="1" />
+          <End Role="SaleLineItem" Type="Domain.Store.SaleLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleLineItem">
+              <PropertyRef Name="MenuProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleLineItem_Sale">
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="1" />
+          <End Role="SaleLineItem" Type="Domain.Store.SaleLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleLineItem">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_Area">
+          <End Role="Area" Type="Domain.Store.Area" Multiplicity="1" />
+          <End Role="Table" Type="Domain.Store.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TableSale_Sale">
+          <End Role="Sale" Type="Domain.Store.Sale" Multiplicity="1" />
+          <End Role="TableSale" Type="Domain.Store.TableSale" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TableSale">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_Employee">
+          <End Role="Employee" Type="Domain.Store.Employee" Multiplicity="1" />
+          <End Role="UserAccount" Type="Domain.Store.UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Domain" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="POSEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Areas" EntityType="Domain.Area" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Categories" EntityType="Domain.Category" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="MenuProducts" EntityType="Domain.MenuProduct" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Payments" EntityType="Domain.Payment" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="People" EntityType="Domain.Person" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Products" EntityType="Domain.Product" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Restaurants" EntityType="Domain.Restaurant" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Sales" EntityType="Domain.Sale" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="SaleLineItems" EntityType="Domain.SaleLineItem" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="UserAccounts" EntityType="Domain.UserAccount" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <AssociationSet Name="FK_Area_Restaurant" Association="Domain.FK_Area_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Area" EntitySet="Areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category" Association="Domain.FK_Product_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_Employee" Association="Domain.FK_UserAccount_Employee">
+            <End Role="Employee" EntitySet="People" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemPrice_Product1" Association="Domain.FK_MenuItemPrice_Product1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="MenuProduct" EntitySet="MenuProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleLineItem_MenuItemPrice" Association="Domain.FK_SaleLineItem_MenuItemPrice">
+            <End Role="MenuProduct" EntitySet="MenuProducts" />
+            <End Role="SaleLineItem" EntitySet="SaleLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Sale" Association="Domain.FK_Payment_Sale">
+            <End Role="Sale" EntitySet="Sales" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Restaurant" Association="Domain.FK_Person_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_UserAccount" Association="Domain.FK_Sale_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Sale" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleLineItem_Sale" Association="Domain.FK_SaleLineItem_Sale">
+            <End Role="Sale" EntitySet="Sales" />
+            <End Role="SaleLineItem" EntitySet="SaleLineItems" />
+          </AssociationSet>
+          <EntitySet Name="Tables" EntityType="Domain.Table" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <AssociationSet Name="FK_Table_Area" Association="Domain.FK_Table_Area">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="Table" EntitySet="Tables" />
+          </AssociationSet>
+          <AssociationSet Name="TableTableSale" Association="Domain.TableTableSale">
+            <End Role="Table" EntitySet="Tables" />
+            <End Role="TableSale" EntitySet="Sales" />
+          </AssociationSet>
+          <EntitySet Name="Menus" EntityType="Domain.Menu" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <EntitySet Name="Registers" EntityType="Domain.Register" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <AssociationSet Name="FK_Register_Area" Association="Domain.FK_Register_Area">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="Register" EntitySet="Registers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Restaurant" Association="Domain.FK_Menu_Restaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemPrice_Menu" Association="Domain.FK_MenuItemPrice_Menu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuProduct" EntitySet="MenuProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Register" Association="Domain.FK_Sale_Register">
+            <End Role="Register" EntitySet="Registers" />
+            <End Role="Sale" EntitySet="Sales" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Area" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RestaurantId" Type="Guid" Nullable="false" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Restaurant" Relationship="Domain.FK_Area_Restaurant" FromRole="Area" ToRole="Restaurant" />
+          <NavigationProperty Name="Tables" Relationship="Domain.FK_Table_Area" FromRole="Area" ToRole="Table" />
+          <NavigationProperty Name="Registers" Relationship="Domain.FK_Register_Area" FromRole="Area" ToRole="Register" />
+        </EntityType>
+        <EntityType Name="Category" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="Domain.FK_Product_Category" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Employee" BaseType="Domain.Person" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <NavigationProperty Name="UserAccount" Relationship="Domain.FK_UserAccount_Employee" FromRole="Employee" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="MenuProduct" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="MenuId" Type="Guid" Nullable="false" />
+          <Property Name="ProductId" Type="Guid" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="Domain.FK_MenuItemPrice_Product1" FromRole="MenuProduct" ToRole="Product" />
+          <NavigationProperty Name="SaleLineItems" Relationship="Domain.FK_SaleLineItem_MenuItemPrice" FromRole="MenuProduct" ToRole="SaleLineItem" />
+          <NavigationProperty Name="Menu" Relationship="Domain.FK_MenuItemPrice_Menu" FromRole="MenuProduct" ToRole="Menu" />
+        </EntityType>
+        <EntityType Name="OTCSale" BaseType="Domain.Sale" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+        </EntityType>
+        <EntityType Name="Payment" Abstract="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="SaleId" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Sale" Relationship="Domain.FK_Payment_Sale" FromRole="Payment" ToRole="Sale" />
+        </EntityType>
+        <EntityType Name="Person" Abstract="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RestaurantId" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Restaurant" Relationship="Domain.FK_Person_Restaurant" FromRole="Person" ToRole="Restaurant" />
+          <Property Type="String" Name="ContactNumber" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Product" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CategoryId" Type="Guid" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="Domain.FK_Product_Category" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="MenuProducts" Relationship="Domain.FK_MenuItemPrice_Product1" FromRole="Product" ToRole="MenuProduct" />
+        </EntityType>
+        <EntityType Name="Restaurant" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Areas" Relationship="Domain.FK_Area_Restaurant" FromRole="Restaurant" ToRole="Area" />
+          <NavigationProperty Name="People" Relationship="Domain.FK_Person_Restaurant" FromRole="Restaurant" ToRole="Person" />
+          <NavigationProperty Name="Menus" Relationship="Domain.FK_Menu_Restaurant" FromRole="Restaurant" ToRole="Menu" />
+        </EntityType>
+        <EntityType Name="Sale" Abstract="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RegisterId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Payments" Relationship="Domain.FK_Payment_Sale" FromRole="Sale" ToRole="Payment" />
+          <NavigationProperty Name="UserAccount" Relationship="Domain.FK_Sale_UserAccount" FromRole="Sale" ToRole="UserAccount" />
+          <NavigationProperty Name="SaleLineItems" Relationship="Domain.FK_SaleLineItem_Sale" FromRole="Sale" ToRole="SaleLineItem" />
+          <NavigationProperty Name="Register" Relationship="Domain.FK_Sale_Register" FromRole="Sale" ToRole="Register" />
+        </EntityType>
+        <EntityType Name="SaleLineItem" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="SaleId" />
+            <PropertyRef Name="MenuProductId" />
+          </Key>
+          <Property Name="SaleId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="MenuProductId" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MenuProduct" Relationship="Domain.FK_SaleLineItem_MenuItemPrice" FromRole="SaleLineItem" ToRole="MenuProduct" />
+          <NavigationProperty Name="Sale" Relationship="Domain.FK_SaleLineItem_Sale" FromRole="SaleLineItem" ToRole="Sale" />
+          <Property Type="String" Name="Message" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserAccount" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Password" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Domain.FK_UserAccount_Employee" FromRole="UserAccount" ToRole="Employee" />
+          <NavigationProperty Name="Sales" Relationship="Domain.FK_Sale_UserAccount" FromRole="UserAccount" ToRole="Sale" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Area_Restaurant">
+          <End Role="Restaurant" Type="Domain.Restaurant" Multiplicity="1" />
+          <End Role="Area" Type="Domain.Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="Domain.Category" Multiplicity="1" />
+          <End Role="Product" Type="Domain.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_Employee">
+          <End Role="Employee" Type="Domain.Employee" Multiplicity="1" />
+          <End Role="UserAccount" Type="Domain.UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemPrice_Product1">
+          <End Role="Product" Type="Domain.Product" Multiplicity="1" />
+          <End Role="MenuProduct" Type="Domain.MenuProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleLineItem_MenuItemPrice">
+          <End Role="MenuProduct" Type="Domain.MenuProduct" Multiplicity="1" />
+          <End Role="SaleLineItem" Type="Domain.SaleLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleLineItem">
+              <PropertyRef Name="MenuProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Sale">
+          <End Role="Sale" Type="Domain.Sale" Multiplicity="1" />
+          <End Role="Payment" Type="Domain.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Restaurant">
+          <End Role="Restaurant" Type="Domain.Restaurant" Multiplicity="1" />
+          <End Role="Person" Type="Domain.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_UserAccount">
+          <End Role="UserAccount" Type="Domain.UserAccount" Multiplicity="1" />
+          <End Role="Sale" Type="Domain.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleLineItem_Sale">
+          <End Role="Sale" Type="Domain.Sale" Multiplicity="1" />
+          <End Role="SaleLineItem" Type="Domain.SaleLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleLineItem">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TableSale" BaseType="Domain.Sale" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Property Type="Guid" Name="TableId" Nullable="false" />
+          <NavigationProperty Name="Table" Relationship="Domain.TableTableSale" FromRole="TableSale" ToRole="Table" />
+        </EntityType>
+        <EntityType Name="Table" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="Guid" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="TableNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Area" Relationship="Domain.FK_Table_Area" FromRole="Table" ToRole="Area" />
+          <NavigationProperty Name="TableSales" Relationship="Domain.TableTableSale" FromRole="Table" ToRole="TableSale" />
+        </EntityType>
+        <Association Name="FK_Table_Area">
+          <End Type="Domain.Area" Role="Area" Multiplicity="1" />
+          <End Type="Domain.Table" Role="Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TableTableSale">
+          <End Type="Domain.Table" Role="Table" Multiplicity="1" />
+          <End Type="Domain.TableSale" Role="TableSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TableSale">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CashPayment" BaseType="Domain.Payment" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="EFTPOSPayment" BaseType="Domain.Payment" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="Menu" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="RestaurantId" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="Domain.FK_Menu_Restaurant" FromRole="Menu" ToRole="Restaurant" />
+          <NavigationProperty Name="MenuProducts" Relationship="Domain.FK_MenuItemPrice_Menu" FromRole="Menu" ToRole="MenuProduct" />
+        </EntityType>
+        <EntityType Name="Register" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Area" Relationship="Domain.FK_Register_Area" FromRole="Register" ToRole="Area" />
+          <NavigationProperty Name="Sales" Relationship="Domain.FK_Sale_Register" FromRole="Register" ToRole="Sale" />
+        </EntityType>
+        <Association Name="FK_Register_Area">
+          <End Type="Domain.Area" Role="Area" Multiplicity="1" />
+          <End Type="Domain.Register" Role="Register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Register">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Restaurant">
+          <End Type="Domain.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="Domain.Menu" Role="Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemPrice_Menu">
+          <End Type="Domain.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="Domain.MenuProduct" Role="MenuProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuProduct">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_Register">
+          <End Type="Domain.Register" Role="Register" Multiplicity="1" />
+          <End Type="Domain.Sale" Role="Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="RegisterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DomainStoreContainer" CdmEntityContainer="POSEntities">
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="Domain.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Domain.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuProducts">
+            <EntityTypeMapping TypeName="Domain.MenuProduct">
+              <MappingFragment StoreEntitySet="MenuProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.Payment)">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.EFTPOSPayment)">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <Condition ColumnName="PaymentTypeId" Value="2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.CashPayment)">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <Condition ColumnName="PaymentTypeId" Value="1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.Person)">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.Employee)">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Domain.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurants">
+            <EntityTypeMapping TypeName="Domain.Restaurant">
+              <MappingFragment StoreEntitySet="Restaurant">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.Sale)">
+              <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RegisterId" ColumnName="RegisterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.OTCSale)">
+              <MappingFragment StoreEntitySet="OTCSale">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Domain.TableSale)">
+              <MappingFragment StoreEntitySet="TableSale">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleLineItems">
+            <EntityTypeMapping TypeName="Domain.SaleLineItem">
+              <MappingFragment StoreEntitySet="SaleLineItem">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+                <ScalarProperty Name="MenuProductId" ColumnName="MenuProductId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="Domain.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="Domain.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="TableNumber" ColumnName="TableNumber" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="Domain.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registers">
+            <EntityTypeMapping TypeName="Domain.Register">
+              <MappingFragment StoreEntitySet="Register">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

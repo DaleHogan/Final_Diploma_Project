@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Xread>
+  <Message/>
+  <TableNumber/>
+  <SaleType/>
+  <RegisterName/>
+  <SaleNumber/>
+  <SaleTotal/>
+  <CashCount/>
+  <CashTotal/>
+  <EftposCount/>
+  <EftposTotal/>
+  <GstTotal/>
+  <UserFirstName/>
+  <UserSalesTotal/>
+  <SaleId/>
+  <SaleCount/>
+  <ProductDescription/>
+  <Quantity/>
+  <ProductPrice/>
+</Xread>

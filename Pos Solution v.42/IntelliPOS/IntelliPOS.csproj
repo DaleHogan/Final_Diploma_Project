@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDFAE2B9-E518-4626-8F90-CB5B9B22C092}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntelliPOS</RootNamespace>
+    <AssemblyName>IntelliPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MVCSharp">
+      <HintPath>..\POS\bin\Debug\MVCSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTableView.Designer.cs">
+      <DependentUpon>AddTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AreaManagementView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaManagementView.Designer.cs">
+      <DependentUpon>AreaManagementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeanSceneDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeanSceneDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ManageItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageItemView.Designer.cs">
+      <DependentUpon>ManageItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStaffMemberView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStaffMemberView.Designer.cs">
+      <DependentUpon>ManageStaffMemberView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceLevelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceLevelView.Designer.cs">
+      <DependentUpon>PriceLevelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTableView.Designer.cs">
+      <DependentUpon>EditTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MIDManager.cs" />
+    <Compile Include="OSKView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSKView.Designer.cs">
+      <DependentUpon>OSKView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentView.Designer.cs">
+      <DependentUpon>PaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionDocket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionDocket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportView.Designer.cs">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SaleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleView.Designer.cs">
+      <DependentUpon>SaleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POSView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSView.Designer.cs">
+      <DependentUpon>POSView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingView.Designer.cs">
+      <DependentUpon>SettingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManagementView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableManagementView.Designer.cs">
+      <DependentUpon>TableManagementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableView.Designer.cs">
+      <DependentUpon>TableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XReadReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XReadReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="AddTableView.resx">
+      <DependentUpon>AddTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreaManagementView.resx">
+      <DependentUpon>AreaManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageItemView.resx">
+      <DependentUpon>ManageItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStaffMemberView.resx">
+      <DependentUpon>ManageStaffMemberView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceLevelView.resx">
+      <DependentUpon>PriceLevelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTableView.resx">
+      <DependentUpon>EditTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSKView.resx">
+      <DependentUpon>OSKView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentView.resx">
+      <DependentUpon>PaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionDocket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductionDocket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportView.resx">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleView.resx">
+      <DependentUpon>SaleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSView.resx">
+      <DependentUpon>POSView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingView.resx">
+      <DependentUpon>SettingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManagementView.resx">
+      <DependentUpon>TableManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableView.resx">
+      <DependentUpon>TableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XReadReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>XReadReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="BeanSceneDataSet.xsc">
+      <DependentUpon>BeanSceneDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BeanSceneDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BeanSceneDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BeanSceneDataSet.xss">
+      <DependentUpon>BeanSceneDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Domain.BusinessRuleException.datasource" />
+    <None Include="Properties\DataSources\Domain.Facade.datasource" />
+    <None Include="Properties\DataSources\Domain.IArea.datasource" />
+    <None Include="Properties\DataSources\Domain.ICategory.datasource" />
+    <None Include="Properties\DataSources\Domain.IEmployee.datasource" />
+    <None Include="Properties\DataSources\Domain.IMenu.datasource" />
+    <None Include="Properties\DataSources\Domain.IMenuProduct.datasource" />
+    <None Include="Properties\DataSources\Domain.IPayment.datasource" />
+    <None Include="Properties\DataSources\Domain.IPerson.datasource" />
+    <None Include="Properties\DataSources\Domain.IProduct.datasource" />
+    <None Include="Properties\DataSources\Domain.IRegister.datasource" />
+    <None Include="Properties\DataSources\Domain.IRestaurant.datasource" />
+    <None Include="Properties\DataSources\Domain.ISale.datasource" />
+    <None Include="Properties\DataSources\Domain.ISaleLineItem.datasource" />
+    <None Include="Properties\DataSources\Domain.ITable.datasource" />
+    <None Include="Properties\DataSources\Domain.ITableSale.datasource" />
+    <None Include="Properties\DataSources\Domain.IUserAccount.datasource" />
+    <None Include="Properties\DataSources\Domain.POSEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{0b0af419-fbff-482d-813b-76ea182135dc}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSApplication\POSApplication.csproj">
+      <Project>{972e96c9-b31e-496b-b1f3-17fc1381b92a}</Project>
+      <Name>POSApplication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeanSceneData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

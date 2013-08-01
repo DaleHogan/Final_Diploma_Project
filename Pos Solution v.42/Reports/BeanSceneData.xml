@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EntityClasses>
+  <Register>
+    <Name></Name>
+  </Register>
+  <Person>
+    <FirstName></FirstName>
+    <LastName></LastName>
+  </Person>
+  <Sale>
+    <Id></Id>
+  </Sale>
+  <Payment>
+    <SaleId></SaleId>
+    <Amount></Amount>
+    <PaymentTypeId></PaymentTypeId>
+  </Payment>
+  <PaymentType>
+    <Id></Id>
+    <Description></Description>
+  </PaymentType>-->
+</EntityClasses>
